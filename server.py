@@ -21,6 +21,8 @@ CORS(app, origins=["http://localhost:5000"])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024  # Max upload size 2 MegaBytes
 
+app.config['TEMPLATES_AUTO_RELOAD'] = True # dev
+
 
 @app.route("/")
 def helloWorld():

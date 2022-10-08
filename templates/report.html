@@ -15,27 +15,37 @@
     <h1 class="title">PNL Analysis - Report</h1>
 
     <div class="report">
-        
-        <div class="total-pnl">Realised PnL : {{data.total_pnl}} ({{data.total_pnl_pct}})</div>
+        <div class="summary">
+            <div class="total-pnl">Realised PnL : {{data.total_pnl}} ({{data.total_pnl_pct}} %)</div>
 
-        <div class="total-trades">TOTAL TRADES : {{data.overall.total_trades}}</div>
-        <div class="profit-trades">PROFIT TRADES : {{data.overall.profit_trades}}</div>
-        <div class="loss-trades">LOSS TRADES : {{data.overall.loss_trades}}</div>
+            <div class="total-trades">TOTAL TRADES : {{data.overall.total_trades}}</div>
+            <div class="profit-trades">PROFIT TRADES : {{data.overall.profit_trades}}</div>
+            <div class="loss-trades">LOSS TRADES : {{data.overall.loss_trades}}</div>
 
-        <div class="trade-summary">{{data.overall.trade_summary}}</div>
-
-        <div class="data">
-            
+            <div class="trade-summary">{{data.overall.trade_summary}}</div>
         </div>
-
+        <div class="summaryChart-container">
+            <canvas id="summaryChart" width="200" height="200"></canvas>
+        </div>
+        
     </div>
 
-    
+    <div class="script-details">
+        
+    </div>
+
+    <div class="scriptChart-container">
+        <canvas id="scriptChart" width="400" height="400"></canvas>
+    </div>
+
+
 
 </body>
 <script>
     var data = {{ data | tojson | safe }};
 </script>
+
+<script src="{{ url_for('static', filename='js/chart.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/report.js') }}"></script>
 
 </html>

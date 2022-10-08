@@ -1,7 +1,61 @@
+body{
+    padding: 1rem;
+}
+
+.title{
+    text-align: center;
+    font-size: 1.4rem;
+}
+
 .report{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(170, 179, 255);
+    border-radius: 1rem;
+}
+.summary{
+    max-width: 60%;
+    margin: 20px 0;
+}
+.summaryChart-container{
     padding: 20px;
 }
 
-.data{
-    margin: 20px;
+.script-details{
+    margin: 30px 0;
+}
+
+.scriptChart-container{
+    margin: 30px 0;
+    width: 60%;
+    height: 400px;
+}
+
+#script-name{
+    font-weight: 700;
+    font-size: 24px;
+}
+
+#script-win-rate{
+    width: fit-content;
+    color: aliceblue;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+.script-details em{
+    font-size: smaller;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+    .scriptChart-container{
+        margin: 30px 0;
+        width: 100%;
+    }
 }
